@@ -1,0 +1,92 @@
+body {
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes go-back {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+.cobrir{
+    animation: go-back 2s;
+}
+
+.cobrir {
+    background-color: #d35e37;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50%;
+}
+.cobrir h2 {
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+    font-size: 40px;
+    margin-left: 20%;
+    margin-right: 20%;
+} 
+.section {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    justify-content: right;
+}
+.box_esquerda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 500px;
+    padding: 50px 0px 50px 110px;
+}
+.box_direita {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 500px;
+    padding: 50px 0px 50px 110px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    width: 50%;
+    background-color: rgb(236, 234, 234);
+    border-radius: 5px;
+    -webkit-box-shadow: 5px 5px 6px -3px rgba(0,0,0,0.44); 
+    box-shadow: 5px 5px 6px -3px rgba(0,0,0,0.44);
+    align-items: center;
+}
+.form input {
+    margin: 10px 40px 10px 40px ;
+    width: 70%;
+}
+.form h4 {
+    margin: auto;
+    padding: 0% 0% 0% 5%;
+}
+.form button {
+    margin: 5% 35% 5% 37% ;
+    width: 25%;
+    height: 35px;
+    background-color: #d35e37;
+    border-radius: 5px;
+    border: 1px solid #d35e37;
+    color: white;
+}
+.form a {
+    margin: 0% 20% 0% 25%;
+}
+.form h2 {
+    text-align: center;
+}
