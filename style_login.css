@@ -1,9 +1,11 @@
 body {
     margin: auto;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
 }
+/* Animação e caixa pra cobrir*/
 
-@keyframes go-back {
+@keyframes esquerda {
     0% {
         transform: translateX(-100%);
     }
@@ -11,10 +13,22 @@ body {
         transform: translateX(0%);
     }
 }
-.cobrir{
-    animation: go-back 2s;
+
+@keyframes direita {
+    0% {
+    transform: translateX(0%);
+    }
+    100% {
+    transform: translateX(-100%);
+    }
 }
 
+.esquerda {
+    animation: esquerda 2s forwards;
+}
+.direita {
+   animation: direita 2s forwards;
+}
 .cobrir {
     background-color: #d35e37;
     width: 50%;
@@ -33,6 +47,9 @@ body {
     margin-left: 20%;
     margin-right: 20%;
 } 
+
+/* seção e caixas */
+
 .section {
     display: flex;
     width: 100%;
@@ -55,17 +72,22 @@ body {
     height: 500px;
     padding: 50px 0px 50px 110px;
 }
+
+/*Formulario*/
+
 .form {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    margin-top: 100px;
     padding: 30px;
     width: 50%;
-    background-color: rgb(236, 234, 234);
+    background-color: lightblue;
     border-radius: 5px;
     -webkit-box-shadow: 5px 5px 6px -3px rgba(0,0,0,0.44); 
     box-shadow: 5px 5px 6px -3px rgba(0,0,0,0.44);
-    align-items: center;
+    
 }
 .form input {
     margin: 10px 40px 10px 40px ;
@@ -83,10 +105,22 @@ body {
     border-radius: 5px;
     border: 1px solid #d35e37;
     color: white;
+    cursor: pointer;
 }
 .form a {
     margin: 0% 20% 0% 25%;
+    cursor: pointer;
+    text-align: center;
+}
+.form a:hover {
+    color: blue;
 }
 .form h2 {
     text-align: center;
+}
+.entrar {
+    margin-right: 150px;
+}
+.cadastro {
+    margin-right: 100px;
 }
