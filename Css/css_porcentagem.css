@@ -1,5 +1,6 @@
 /* Configurações globais */
 
+
 @media only screen and (min-width: 768px) {
   @font-face {
     font-family: "astro";
@@ -28,7 +29,11 @@ body {
   box-sizing: border-box;
 }
 
+
 /* Header e Navbar */
+
+
+
 .menu_log {
   display: flex;
   background-color: black;
@@ -53,13 +58,16 @@ body {
 .navbar_log a:hover{
   color: gray;
 }
+.navbar_log .barra:hover {
+  color: white;
+  cursor: default;
+}
 .header {
   background-color: #f5f5f5;
   border-bottom: 5px solid #c23a0b;
   height: auto;
   display: flex;
   align-items: center;
-  padding: 1.5%;
 }
 
 .header .container {
@@ -72,26 +80,44 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
   height: auto;
-  gap: 1.5vw;
+  gap: 1vw;
+  overflow: hidden;
+  margin: 0;
 }
 
 @media only screen and (min-width: 768px) {
   .navbar {
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
     width: auto;
   }
 }
-
-.navbar a {
+.navbar li {
+  height: 100%;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  padding: 4% 0%;
+}
+.navbar li a{
+  display: block;
   color: #c23a0b;
   text-decoration: none;
-  font-size: 1.5vw;
-  font-weight: 500  ;
+  font-size: 1.4vw;
+  font-weight: 500;
+  padding: 0% 5%;
+}
+.navbar li:hover {
+transition-delay: 2s;
+background: rgb(194,52,11);
+background: linear-gradient(180deg,  rgba(209,128,100,1) 0%, rgba(194,52,11,1) 100%);
+}
+.navbar li:hover a{
+  color: white;
+  font-weight: 600;
 }
 
 .logomarca {
@@ -133,15 +159,16 @@ body {
 }
 
 .esquerda {
-  animation: esquerda 2s forwards;
+  animation: esquerda 1.5s forwards ease-in-out;
 }
 
 .direita {
-  animation: direita 2s forwards;
+  animation: direita 1.5s forwards ease-in-out;
 }
 
 .cobrir {
-  background-color: #c23a0b;
+  background: rgb(194,52,11);
+  background: linear-gradient(180deg, rgba(194,52,11,1) 0%, rgba(209,128,100,1) 100%);
   width: 50%;
   height: 100%;
   position: absolute;
@@ -238,7 +265,9 @@ body {
   }
 }
 
+
 /* Formulário */
+
 
 .form {
   display: flex;
@@ -268,7 +297,7 @@ body {
 }
 
 .form button {
-  margin: 5% auto;
+  margin: 4% auto;
   width: 25%;
   max-width: 150px;
   height: 35px;
@@ -280,7 +309,7 @@ body {
 }
 
 .form a {
-  margin: 5% auto;
+  margin: 2% auto 4% auto;
   cursor: pointer;
   text-align: center;
 }
@@ -303,18 +332,41 @@ body {
   margin-right: 5%;
 }
 
+
 /* Footer */
+
 
 footer {
   display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-evenly;
   width: 100%;
   min-height: 300px;
   background-color: #f5f5f5;
   margin-top: 7.5%;
-  border-top: 8px solid #c23a0b;
+  border-top: 8px solid #d18064;
 }
-
+footer ul {
+  list-style-type: none;
+  width: 20%;
+}
+footer h2 {
+  text-decoration: none;
+  font-size: 16pt;
+  margin-bottom: 3%;
+}
+footer a {
+  text-decoration: none;
+  color: darkgray;
+  font-size: 12pt;
+}
+footer a:hover {
+  color: black;
+}
+footer hr {
+  border: 0.5px solid darkgray;
+}
 .footer_2 {
   background-color: gray;
   width: 100%;
