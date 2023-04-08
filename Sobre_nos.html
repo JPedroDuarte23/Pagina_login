@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TermoGuard - Sobre Nós</title>
+    <link rel="stylesheet" href="Css/style.css">
+</head>
+
+<body>
+    <div class="menu_log">
+        <ul class="navbar_log">
+            <li><a href="login_cadastro.html" id="a_entrar">ENTRAR</a></li>
+            <li><a class="barra">|</a></li>
+            <li><a href="login_cadastro.html" id="a_cadastrar">CADASTRAR</a></li>
+        </ul>
+    </div>
+    <div class="header">
+        <div class="container">
+            <img src="Imagens/logo.png" alt="" class="logomarca">
+            <ul class="navbar">
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="Simulador.html">Simulador</a></li>
+                <li><a href="Sobre_nos.html">Sobre Nós</a></li>
+                <li><a href="Fale_conosco.html">Fale Conosco</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    const entrar = document.getElementById('a_entrar');
+    const cadastrar = document.getElementById('a_cadastrar');
+
+    entrar.addEventListener('click', () => {
+        localStorage.setItem('posicaoDiv', 'esquerda');
+    });
+
+    cadastrar.addEventListener('click', () => {
+        localStorage.setItem('posicaoDiv', 'direita');
+    });
+</script>

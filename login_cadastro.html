@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TermoGuard - Login</title>
     <link rel="stylesheet" href="Css/css_porcentagem.css">
 </head>
 
@@ -19,15 +19,15 @@
     </div>
     <div class="header">
         <div class="container">
-            <img src="Imagens/logo.png" alt="" class="logomarca">
-          <ul class="navbar">
-            <li><a href="">Home</a></li>
-            <li><a href="">Simulador</a></li>
-            <li><a href="">Sobre Nós</a></li>
-            <li><a href="">Fale Conosco</a></li>
-          </ul>
+            <img src="Imagens/logo.png" alt="" class="logomarca" onclick="redirecionar_home()">
+            <ul class="navbar">
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="Simulador.html">Simulador</a></li>
+                <li><a href="Sobre_nos.html">Sobre Nós</a></li>
+                <li><a href="Fale_conosco.html">Fale Conosco</a></li>
+            </ul>
         </div>
-      </div>
+    </div>
     <div class="cobrir" id="div_bloco">
         <h2 id="h2_bloco">Se junte a nossa família!</h2>
         <button onclick="animacao_cadastrar()" id="button_cobrir">Cadastrar</button>
@@ -78,40 +78,48 @@
     <div class="footer_2">
         Feito com amor e carinho por: João Pedro Duarte Silva
     </div>
-    <div id="div_style"></div>
 </body>
 
 </html>
 <script>
-    var contador = 0
+    const posicaoDiv = localStorage.getItem('posicaoDiv');
+    const divLogin = document.getElementById('div_bloco');
+
+    if (posicaoDiv === 'direita') {
+        divLogin.classList.add('direita');
+        h2_bloco.innerHTML = `Olá novamente, seja muito bem vindo!`;
+        button_cobrir.innerHTML = `Entrar`;
+        
+    } else if (posicaoDiv === 'esquerda') {
+        divLogin.classList.add('esquerda');
+    }
+    
     function animacao_cadastrar() {
-        if (div_bloco.classList != "direita" ) {
+        if (div_bloco.classList != "direita") {
             div_bloco.classList.remove("esquerda")
             div_bloco.classList.add("direita")
 
-            
+
             h2_bloco.innerHTML = `Olá novamente, seja muito bem vindo!`
-            button_cobrir.innerHTML =`Entrar`
-            
-            button_cobrir.setAttribute("onclick", "animacao_entrar(this);")
+            button_cobrir.innerHTML = `Entrar`
 
-            contador++
-        } 
-    }
-    function animacao_entrar() {
-        if (contador != 0) {
-        if (div_bloco.classList != "esquerda") {
-        div_bloco.classList.remove("direita")
-        div_bloco.classList.add("esquerda")
-
-        h2_bloco.innerHTML = `Se junte a nossa família!`
-
-        button_cobrir.innerHTML =`Cadastrar`
-        button_cobrir.setAttribute("onclick", "animacao_cadastrar(this);")
+            button_cobrir.setAttribute("onclick", "animacao_entrar();")
         }
     }
-    }
+    function animacao_entrar() {
+            if (div_bloco.classList != "esquerda") {
+                div_bloco.classList.remove("direita")
+                div_bloco.classList.add("esquerda")
 
+                h2_bloco.innerHTML = `Se junte a nossa família!`
+
+                button_cobrir.innerHTML = `Cadastrar`
+                button_cobrir.setAttribute("onclick", "animacao_cadastrar();")
+            }
+    }
+    function redirecionar_home() {
+        window.location.href = "Index.html"
+    }
     function entrar() {
         alert("Você entrou com sucesso")
     }
