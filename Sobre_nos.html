@@ -19,7 +19,7 @@
     </div>
     <div class="header">
         <div class="container">
-            <img src="Imagens/logo.png" alt="" class="logomarca">
+            <img src="Imagens/logo.png" alt="" class="logomarca" onclick="redirecionar_home()">
             <ul class="navbar">
                 <li><a href="Index.html">Home</a></li>
                 <li><a href="Simulador.html">Simulador</a></li>
@@ -27,6 +27,29 @@
                 <li><a href="Fale_conosco.html">Fale Conosco</a></li>
             </ul>
         </div>
+    </div>
+    <div style="height: 600px; background-color: #c23a0b; margin-top: 5%;"></div>
+    <footer>
+        <ul class="ul_direita_footer">
+            <h2>Ajuda</h2>
+            <li><a href="">Nossa história</a></li>
+            <li><a href="">Atendimento ao cliente</a></li>
+            <li><a href="">Termos de Uso e Política de Privacidade</a></li>
+            <li><a href="">Informações Financeiras</a></li>
+            <li><a href="">Acesso rápido</a></li>
+        </ul>
+        <hr size="200">
+        <ul class="ul_esquerda_footer">
+            <h2>Informações</h2>
+            <li><a href="">Informações Financeiras</a></li>
+            <li><a href="">Acesso rápido</a></li>
+            <li><a href="">Transparência de Remuneração</a></li>
+            <li><a href="">Atendimento ao cliente</a></li>
+            <li><a href="">Carreiras</a></li>
+        </ul>
+    </footer>
+    <div class="footer_2">
+        Feito com amor e carinho por: João Pedro Duarte Silva
     </div>
 </body>
 
@@ -42,4 +65,7 @@
     cadastrar.addEventListener('click', () => {
         localStorage.setItem('posicaoDiv', 'direita');
     });
+    function redirecionar_home() {
+        window.location.href = "Index.html"
+    }
 </script>

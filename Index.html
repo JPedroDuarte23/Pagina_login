@@ -19,7 +19,7 @@
     </div>
     <div class="header">
         <div class="container">
-            <img src="Imagens/logo.png" alt="" class="logomarca">
+            <img src="Imagens/logo.png" alt="" class="logomarca" onclick="redirecionar_home()">
             <ul class="navbar">
                 <li><a href="Index.html">Home</a></li>
                 <li><a href="Simulador.html">Simulador</a></li>
@@ -28,7 +28,7 @@
             </ul>
         </div>
     </div>
-    <div style="height: 1000px; background-color: white  ;"></div>
+    <div style="height: 600px; background-color: white; margin-top: 5%;"></div>
     <footer>
         <ul class="ul_direita_footer">
             <h2>Ajuda</h2>
@@ -64,4 +64,7 @@
     cadastrar.addEventListener('click', () => {
         localStorage.setItem('posicaoDiv', 'direita');
     });
+    function redirecionar_home() {
+        window.location.href = "Index.html"
+    }
 </script>
