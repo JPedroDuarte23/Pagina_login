@@ -1,0 +1,41 @@
+.secao_1 {
+    background-color: whitesmoke;
+    height: 60%;
+    margin: 5% 0%;
+    padding: 3% 0%;
+}
+.secao_1 .container {
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    
+}
+.container hr {
+    margin: 1% 0% 2% 0%;
+    border-color: black;
+    width: 20%;
+}
+.boxes {
+    display: flex;
+    padding: 4% 0;
+    gap: 5%;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  .box {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+  }
+  .box img {
+    width: auto;
+    height: auto;
+    max-width: 60%;
+  }
+  .box h4 {
+    color: #ce477f;
+    font-weight: bold;
+  }
+  .box p {
+    margin: 10px 0px 0px 10px;
+  }

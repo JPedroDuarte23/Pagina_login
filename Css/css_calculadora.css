@@ -29,7 +29,7 @@
   background-color: #c23a0b;
   color: white;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid #c23a0b;
 }
 .form input {
   margin: 5% 10% 5% 15%;
@@ -43,17 +43,15 @@
   text-align: center;
 }
 .form button {
-  margin: 5% 35% 5% 37% ;
+  margin: 5% 35% 5% 37%;
+  padding: 2%;
   width: 25%;
-  height: 35px;
+  height: 10%;
   background-color: #c23a0b;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid #c23a0b;
   color: white;
   cursor: pointer;
-  -webkit-box-shadow:5px 5px 6px -3px #a92200;
-  -moz-box-shadow: 5px 5px 6px -3px #a92200;
-  box-shadow: 5px 5px 6px -3px #a92200;
 }
 .form a {
   margin: 0% 20% 0% 25%;
@@ -66,7 +64,7 @@
 .form h2 {
   text-align: center;
   margin-bottom: 5%;
-  font-size: 2vw;
+  font-size: 1.8vw;
   text-decoration: underline;
 }
 #span_result {
@@ -75,10 +73,10 @@
   font-weight: 100;
   background-color: #c23a01;
   height: auto;
-  width: 400px;
-  border: 0.25px solid black;
+  max-width: 400px;
+  border: 0.25px solid #c23a0b;
   text-align: center;
-  padding: 10px 10px 10px 10px;
+  padding: 4%;
   border-radius: 4px;
   -webkit-box-shadow: 5px 5px 6px -3px #a92200;
   -moz-box-shadow: 5px 5px 6px -3px #a92200;

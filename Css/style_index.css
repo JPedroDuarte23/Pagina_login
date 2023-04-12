@@ -1,0 +1,116 @@
+.banner {
+    background-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 100%), 
+    url("https://imagens.ebc.com.br/Dnjn1sCKxyQPXlin7FYbRA7ceZk=/1600x800/https://agenciabrasil.ebc.com.br/sites/default/files/atoms/image/frigorificos.jpg?itok=BzysYD2y");
+    background-size: cover;  
+    height: 70%;
+    box-shadow: -2px 6px 12px -1px rgba(0,0,0,0.30);
+}
+.banner .container {
+    height: 100%;
+    align-items: left;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+.banner h1 {
+    color: white;
+    height: auto;
+    width: 50%;
+    margin: 0% 0% 2% 0%;
+    font-size: 2vw;
+}
+.banner h3 {
+    color: white;
+    height: auto;
+    width: 50%;
+    margin: 0% 0% 2% 0%;
+    font-size: 1.3vw;
+    font-weight: normal;
+}
+.banner button {
+    width: 15%;
+    height: 7.5%;
+    margin: 2.5% 0% 5% 0%;
+    color: black;
+    background-color: #67d1f0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Seção 1 */
+
+.secao_1 {
+    height: 50%;
+    margin-top: 4%;
+}
+.secao_1 .container {
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    justify-content: space-around;
+}
+.secao_1 p {
+    width: 40%;
+    font-size: 1.5vw;
+}
+.secao_1 hr {
+    border-color: black;
+}
+.secao_1 img {
+    width: auto;
+    height: auto;
+    max-width: 50%;
+    max-height: 100%;
+}
+
+/* Secao 2 */
+.secao_2 {
+    height: 70%;
+    margin-top: 4%;
+    background-color: #ade6f7;
+    box-shadow: -2px -3px 12px -1px rgba(0,0,0,0.30), 2px 6px 12px -1px rgba(0,0,0,0.30);
+}
+.secao_2 .container {
+    height: 100%;
+    align-items: center;
+    justify-content: right;
+    overflow: hidden;
+}
+
+.secao_2 .caixa_nossa_historia {
+    background-color: white;
+    width: 22.5%;
+    height: 35%;
+    position: absolute;
+    right: 50%;
+    border-radius: 4px;
+    padding: 4%;
+    
+}
+.secao_2 img {
+    height: auto;
+    width: auto;
+    max-width: 45%;
+    margin: 0% 15% 0% 0%;
+}
+.caixa_nossa_historia h1 {
+    margin-bottom: 5%;
+    font-size: 2.0vw;
+}
+.caixa_nossa_historia hr {
+    margin-bottom: 5%;
+    background-color: black;
+}
+.caixa_nossa_historia p {
+    font-size: 1.3vw;
+    margin-bottom: 10%;
+}
+.caixa_nossa_historia button {
+    width: 55%;
+    height: 15%;
+    color: black;
+    background-color: #67d1f0;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}

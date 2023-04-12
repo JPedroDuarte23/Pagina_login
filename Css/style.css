@@ -16,7 +16,7 @@
   body {
     margin: auto;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: lightblue;
+    background-color: #fce3db;
     width: 100%;
     height: 100vh;
   }
@@ -130,7 +130,7 @@
     margin: 0;
   }
   .logomarca:hover {
-    cursor: pointer;
+    cursor:  pointer;
   }
   @media only screen and (max-width: 480px) {
   .header {
@@ -156,7 +156,7 @@ footer {
   width: 100%;
   min-height: 300px;
   background-color: #f5f5f5;
-  margin-top: 7.5%;
+  margin-top: 5%;
   border-top: 9px solid #d18064;
 }
 
