@@ -1,41 +1,133 @@
-.secao_1 {
-    background-color: whitesmoke;
-    height: 60%;
-    margin: 5% 0%;
-    padding: 3% 0%;
+body {
+  background-color: #f3f3f3;
 }
-.secao_1 .container {
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    
+
+/* Banner */
+
+.banner_cor {
+  background-color: rgb(95, 204, 229);
+  height: 35%;
 }
-.container hr {
-    margin: 1% 0% 2% 0%;
-    border-color: black;
-    width: 20%;
+
+.banner_cor .container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  height: 100%;
+
 }
+
+.banner_cor h1 {
+  margin-bottom: 12.5%;
+  font-size: 2vw;
+}
+
+/* Seção 1*/
+
+.secao_texto {
+  background-color: #f3f3f3;
+  height: 80%;
+}
+
+.secao_texto .container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: baseline;
+  height: 100%;
+  padding: 23% 0% 10% 0%;
+}
+
+.secao_texto img {
+  width: auto;
+  height: auto;
+  max-width: 45%;
+  position: absolute;
+  top: 40%;
+  border-radius: 5px;
+}
+
+.secao_texto p {
+  width: 60%;
+  font-size: 1.3vw;
+  margin-bottom: 2%;
+}
+
+/* Seção 2*/
+
+
+
+.secao_valores {
+  background: rgb(95, 204, 229);
+  background: linear-gradient(180deg, rgba(95, 204, 229, 1) 0%, rgba(173, 230, 247, 1) 100%);
+  height: 70%;
+  padding: 3% 0%;
+  margin: 3% 0;
+  box-shadow: inset 0 8px 13px -7px rgba(0, 0, 0, 0.3), inset 0 -7px 13px -7px rgba(0, 0, 0, 0.3);
+}
+
+.secao_valores .container {
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+
+}
+
+.secao_valores .container h1 {
+  font-size: 1.8vw;
+  color: black;
+  text-align: center;
+}
+
+.secao_valores hr {
+  margin: 0.5% 0% 2% 0%;
+  border: 1px solid black;
+  width: 20%;
+}
+
 .boxes {
-    display: flex;
-    padding: 4% 0;
-    gap: 5%;
-    justify-content: space-around;
-    flex-direction: row;
-  }
-  .box {
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-  }
-  .box img {
-    width: auto;
-    height: auto;
-    max-width: 60%;
-  }
-  .box h4 {
-    color: #ce477f;
-    font-weight: bold;
-  }
-  .box p {
-    margin: 10px 0px 0px 10px;
-  }
+  display: flex;
+  padding: 2% 0;
+  gap: 1.5%;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+  height: 70%;
+}
+
+.box {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  padding: 4%;
+}
+
+.box hr {
+  width: 50%;
+  border: 1px solid black;
+  margin: 2% 0% 7% 0%;
+}
+
+.box p {
+  text-align: center;
+  font-size: 1.3vw;
+}
+
+.innovation {
+  width: auto;
+  height: auto;
+  max-width: 70%;
+}
+
+.pluralidade {
+  width: auto;
+  height: auto;
+  max-width: 80%;
+}
+
+.conectividade {
+  width: auto;
+  height: auto;
+  max-width: 90%;
+}

@@ -34,48 +34,78 @@
         <div class="container">
             <h1>Com problemas para administrar a temperatura e umidade em seu frigorífico?</h1>
             <h3>Fale com a gente, temos a solução ideal para você!</h3>
-            <button>Saiba mais</button>
+            <button onclick="redirecionar_caixas()">Saiba mais</button>
         </div>
     </div>
-    <section class="secao_caixas">
+    <section class="secao_caixas" id="section_caixas">
         <div class="container">
-            <h1>LALALA</h1>
+            <h1>Nossos serviços</h1>
             <h2></h2>
-            <hr width="15%">
+            <hr>
             <div class="boxes">
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
+                <div class="box">
+                    <img src="Imagens/termometro.png" class="termometro">
+                    <h2>Controle de temperaturas</h2>
+                    <hr>
+                    <p>Com o uso de sensores precisos e confiáveis, é possível monitorar as temperaturas em diversos
+                        pontos do processo produtivo, do armazenamento e do transporte, permitindo identificar eventuais
+                        desvios e agir rapidamente para corrigi-los.</p>
+                </div>
+                <div class="box">
+                    <img src="Imagens/Caminhao.png" class="caminhao">
+                    <h2>Transporte</h2>
+                    <hr>
+                    <p>No transporte de carcaças, os sensores de temperatura são ferramentas essenciais para garantir a
+                        qualidade e segurança dos alimentos. Com a utilização de sensores precisos, é possível monitorar
+                        constantemente a temperatura das carcaças e identificar qualquer variação que possa comprometer
+                        a integridade dos produtos.</p>
+                </div>
+                <div class="box">
+                    <img src="Imagens/carne.png" class="carne">
+                    <h2>Qualidade</h2>
+                    <hr>
+                    <p>Uma carne de qualidade superior, com sabor e textura agradáveis, é um diferencial competitivo
+                        para sua empresa. Além disso a qualidade do produto é fundamental para a reputação da marca no
+                        setor alimentício e entre os consumidores</p>
+                </div>
+                <div class="box">
+                    <img src="Imagens/bolsa-de-dinheiro.png" class="dinheiro">
+                    <h2>Maior rendimento</h2>
+                    <hr>
+                    <p>O controle inadequado das temperaturas em um frigorífico tem um impacto significativo no
+                        lucro da sua empresa. Isso porque, quando a temperatura não é mantida dentro dos padrões
+                        adequados estabelecidos pela RQID,
+                        a qualidade da carne pode ser comprometida, o que pode levar à perda de clientes e à queda nas
+                        vendas.</p>
+                </div>
             </div>
         </div>
     </section>
     <section class="secao_1">
         <div class="container">
-                <img src="Imagens/Imagem_engrenagem.png">  
-                <hr size="200">  
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                met, voluptatum. Fugit dolore nihil iste quaerat magni perferendis
-                consequuntur soluta necessitatibus! Explicabo numquam necessitatibus 
-                nesciunt velit eius totam maiores similique consequatur!
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>   
+            <img src="Imagens/Imagem_engrenagem.png">
+            <hr size="200">
+            <p>Nosso sistema de monitoramento de temperatura e controle via dashboard é uma solução moderna e eficiente
+                para garantir a qualidade e segurança dos produtos em um ambiente controlado. Com o uso de sensores de
+                temperatura, os dados captados são tratados e apresentados graficamente, é possível monitorar em tempo
+                real a temperatura de diferentes locais, equipamentos e produtos.</p>
         </div>
     </section>
-    
+
     <section class="secao_2">
         <div class="container">
             <div class="caixa_nossa_historia">
                 <h1>Lorem ipsum</h1>
                 <hr size="4">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Id alias impedit sit sapiente laudantium qui placeat reiciendis dolor?
-                     Ut modi suscipit aliquam rerum libero esse voluptatem voluptates at provident atque!</p>
+                    Ut modi suscipit aliquam rerum libero esse voluptatem voluptates at provident atque!</p>
                 <button>Conheça nossa história</button>
             </div>
             <img src="https://kalongabens.com.br/wp-content/uploads/2021/05/testePrancheta-1-752x1024.jpg" alt="">
         </div>
     </section>
-    
+
     <footer>
         <ul class="ul_direita_footer">
             <h2>Ajuda</h2>
@@ -113,5 +143,8 @@
     });
     function redirecionar_home() {
         window.location.href = "Index.html"
+    }
+    function redirecionar_caixas() {
+        window.location.href = "#section_caixas"
     }
 </script>
