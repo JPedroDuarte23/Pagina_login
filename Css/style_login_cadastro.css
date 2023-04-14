@@ -238,6 +238,14 @@ background: linear-gradient(180deg,  rgba(209,128,100,1) 0%, rgba(194,52,11,1) 1
   justify-content: right;
   padding: 2% 0% 6% 0%;
 }
+@media only screen and (width: 1366px) {
+  .cobrir {
+      height: 100%;
+  }
+  .section {
+    padding: 0% 0% 4% 0%;
+  }
+}
 
 .box_esquerda {
   display: flex;

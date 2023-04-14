@@ -28,7 +28,7 @@ html,body {
 .sidebar {
     width: 15%;
     height: 100%;
-    background-color: white;
+    background-color: #f3f3f3;
 }
 .sidebar .logomarca {
     width: 70%;
@@ -128,4 +128,13 @@ header h2 {
     border-radius: 100%;
     background: linear-gradient(155deg, #D47C5E 0%, #ADD8EF 80%);
     margin: 0% 10% 0% 4%;
+}
+
+.lista_graficos {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+    min-height: 95%;
+    margin-left: 2%;
 }

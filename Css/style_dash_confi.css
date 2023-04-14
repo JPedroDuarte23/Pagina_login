@@ -28,7 +28,7 @@ html,body {
 .sidebar {
     width: 15%;
     height: 100%;
-    background-color: white;
+    background-color: #f3f3f3;
 }
 .sidebar .logomarca {
     width: 70%;
