@@ -1,12 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="Css/style_dash_confi.css">
 </head>
+
 <body>
-    
+    <section class="main">
+        <div class="sidebar">
+            <img src="imagens/logo.png" class="logomarca" onclick="redirecionar_home()">
+            <ul>
+                <li><a href=""> <img src="Imagens/icons8-increase-profits-64.png" class="grafico"> Gráficos</a></li>
+                <li><a href=""><img src="Imagens/icons8-map-marker-50.png" class="mapa">Localização</a></li>
+                <li><a href="" class="sidebar_active"><img src="Imagens/icons8-config-64.png"
+                            class="engrenagem">Configurações</a></li>
+            </ul>
+
+        </div>
+        <div class="caixa_maior">
+            <header>
+                <h2>Configurações</h2>
+                <div class="lateral_icones">
+                    <div class="icone"><img src="Imagens/sun.png" alt=""></div>
+                    <div class="icone"><img src="Imagens/help.png" alt=""></div>
+                    <div class="icone"><img src="Imagens/notification.png" alt=""></div>
+                    <div class="user">
+                        <div class="circulo"></div>
+                        <h4>Swift</h4>
+                    </div>
+                </div>
+            </header>
+            <section class="lista_config">
+                <div class="alertas">
+                    <h3>Alertas</h3>
+                    <hr class="fechamento">
+                    <h4>Alertas de Temperatura e Umidade</h4>
+                    <h5>Configurar regra dos alertas</h5>
+                    <hr class="hr_menor">
+                    <h5>Configurar/registrar números para receber os alertas</h5>
+                    <hr class="hr_menor">
+                    <h4>Alertas de Temperatura e Umidade</h4>
+                    <h5>Configurar regra dos alertas</h5>
+                    <hr class="hr_menor">
+                    <h5>Configurar/registrar números para receber os alertas</h5>
+
+                </div>
+                <div class="cores_unidades">
+                    <h3>Cores e Unidades</h3>
+                    <hr class="fechamento">
+                    <h4>Alterar cores utilizadas nos gráficos</h4>
+                    <hr class="hr_maior">
+                    <h5>Alterar unidades dos gráficos</h5>
+                    <hr class="hr_menor">
+                    <h5 class="txt">Temperatura</h5>
+
+                    <div class="linha">
+                        <h6>°C (Celsius)</h6>
+                        <button>°C</button>
+                    </div>
+
+                    <hr class="hr_menor_2">
+
+                    <div class="linha">
+                        <h6>°F (Farenheit)</h6>
+                        <button>°F</button>
+                    </div>
+
+                    <hr class="hr_menor_2">
+
+                    <div class="linha">
+                        <h6>K (Kelvin)</h6>
+                        <button>K</button>
+                    </div>
+
+                    <hr class="hr_menor">
+                    
+                    <h5 class="txt">Umidade</h5>
+                    <div class="linha">
+                    <h6>UR (Umidade Relativa)</h6>
+                    <button>UR</button>
+                </div>
+
+                    <hr class="hr_menor_2">
+
+                    <div class="linha">
+                    <h6>UR (Umidade Relativa)</h6>
+                    <button>UR</button>
+                </div>
+
+                    <hr class="hr_menor_2">
+
+                    <div class="linha">
+                    <h6>UR (Umidade Relativa)</h6>
+                        <button>UR</button>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </section>
 </body>
 </html>
+<script>
+    function redirecionar_home() {
+        window.location.href = "Index.html"
+    }
+</script>
