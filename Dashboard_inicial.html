@@ -6,31 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Home</title>
+    <script src="https://kit.fontawesome.com/c52875e8e8.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="Css/style_dash_incial.css">
+    
 </head>
 
-<body>
+<body class="light_mode">
     <section class="main">
-        <div class="sidebar">
-            <img src="imagens/logo.png" class="logomarca" onclick="redirecionar_home()">
+        <div class="sidebar light_mode">
+            <img src="imagens/logo.png" class="logomarca" id="img_logo" onclick="redirecionar_home()">
             <ul>
-                <li><a href="Dashboard_inicial.html" class="sidebar_active"> <img
-                            src="Imagens/icons8-increase-profits-64.png" class="grafico"> Gráficos</a></li>
-                <li><a href="Dashboard_localizacao.html"><img src="Imagens/icons8-map-marker-50.png"
-                            class="mapa">Localização</a></li>
-                <li><a href="Dashboard_cofig.html"><img src="Imagens/icons8-config-64.png"
-                            class="engrenagem">Configurações</a></li>
+                <li><a href="Dashboard_inicial.html" class="sidebar_active"> <i class="fa-solid fa-chart-simple fa-lg"></i>Gráficos</a></li>
+                <li><a href="Dashboard_localizacao.html"><i class="fa-solid fa-location-dot fa-lg"></i>Localização</a></li>
+                <li><a href="Dashboard_cofig.html"><i class="fa-solid fa-gear fa-lg"></i>Configurações</a></li>
             </ul>
 
         </div>
         <div class="caixa_maior">
-            <header>
+            <header class="light_mode">
                 <h2>Gráficos</h2>
                 <div class="lateral_icones">
-                    <div class="icone"><img src="Imagens/sun.png" alt=""></div>
-                    <div class="icone"><img src="Imagens/help.png" alt=""></div>
-                    <div class="icone"><img src="Imagens/notification.png" alt=""></div>
+                    <div class="icone light_mode" onclick="mudar_tema_escuro()" id="div_sol"><img src="Imagens/sun.png" alt=""></div>
+                    <div class="icone light_mode"><img src="Imagens/help.png" alt=""></div>
+                    <div class="icone light_mode"><img src="Imagens/notification.png" alt=""></div>
                     <div class="user">
                         <div class="circulo"></div>
                         <h4>Swift</h4>
@@ -38,39 +37,43 @@
                 </div>
             </header>
             <section class="lista_graficos">
-                <div class="caixa_graficos">
+               <h2>Loja Swift 1</h2>
+
+                <div class="caixa_graficos light_mode">
                     <div class="linha1">
-                        <div class="grafico">
+                        <div class="grafico light_mode">
                             <canvas id="sensores"></canvas>
                         </div>
 
-                        <div class="grafico">
+                        <div class="grafico light_mode">
                             <canvas id="temp_umid"></canvas>
                         </div>
                     </div>
                     <div class="linha2">
-                        <div class="grafico">
+                        <div class="grafico light_mode">
                             <canvas id="canvas_grafico_barra"></canvas>
                         </div>
-                        <div class="grafico">
+                        <div class="grafico light_mode">
                             <canvas id="canvas_grafico_linha"></canvas>
                         </div>
                     </div>
                 </div>  
-                <div class="caixa_graficos">
+                <hr class="light_mode">
+                <h2>Loja Swift 2</h2>
+                <div class="caixa_graficos light_mode">
                     <div class="linha1">
-                        <div class="grafico">
+                        <div class="grafico light_mode">
                             <canvas id="sensores_2"></canvas>
                         </div>
-                        <div class="grafico">
+                        <div class="grafico light_mode">
                             <canvas id="temp_umid_2"></canvas>
                         </div>
                     </div>
                     <div class="linha2">
-                        <div class="grafico">
+                        <div class="grafico light_mode">
                             <canvas id="canvas_grafico_barra_2"></canvas>
                         </div>
-                        <div class="grafico">
+                        <div class="grafico light_mode">
                             <canvas id="canvas_grafico_linha_2"></canvas>
                         </div>
                     </div>
@@ -84,6 +87,38 @@
     function redirecionar_home() {
         window.location.href = "Index.html"
     }
+    const divs = document.querySelectorAll('.light_mode');
+    var l2_divs = 0
+    var d2_divs = 0
+
+    function mudar_tema_escuro(){
+      if (d2_divs == 0) {
+      for(num_divs= 0; num_divs <divs.length; num_divs ++) {
+        divs[num_divs].classList.remove('light_mode')
+        divs[num_divs].classList.add('dark_mode')
+      }
+      d2_divs = document.querySelectorAll('.dark_mode');
+    } else {
+      for(num_divs= 0; num_divs <d2_divs.length; num_divs ++) {
+        d2_divs[num_divs].classList.remove('light_mode')
+        d2_divs[num_divs].classList.add('dark_mode')
+      }
+    }
+      div_sol.setAttribute("onclick", "mudar_tema_claro();")
+      img_logo.setAttribute("src", "Imagens/logo3.png");
+    }
+
+    function mudar_tema_claro() {
+      for(num_divs = 0; num_divs <d2_divs.length; num_divs ++) {
+      d2_divs[num_divs].classList.add('light_mode')
+      d2_divs[num_divs].classList.remove('dark_mode')     
+
+      l2__divs = document.querySelectorAll('.light_mode');
+    }
+    div_sol.setAttribute("onclick", "mudar_tema_escuro();")
+    img_logo.setAttribute("src", "Imagens/logo.png")
+  }
+  
     const sensores = document.getElementById('sensores');
     const sensores_2 = document.getElementById('sensores_2');
     const temp_umid = document.getElementById('temp_umid');
