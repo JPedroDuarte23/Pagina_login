@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Home</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="Css/style_dash_incial.css">
 </head>
 
@@ -37,7 +38,43 @@
                 </div>
             </header>
             <section class="lista_graficos">
-    
+                <div class="caixa_graficos">
+                    <div class="linha1">
+                        <div class="grafico">
+                            <canvas id="sensores"></canvas>
+                        </div>
+
+                        <div class="grafico">
+                            <canvas id="temp_umid"></canvas>
+                        </div>
+                    </div>
+                    <div class="linha2">
+                        <div class="grafico">
+                            <canvas id="canvas_grafico_barra"></canvas>
+                        </div>
+                        <div class="grafico">
+                            <canvas id="canvas_grafico_linha"></canvas>
+                        </div>
+                    </div>
+                </div>  
+                <div class="caixa_graficos">
+                    <div class="linha1">
+                        <div class="grafico">
+                            <canvas id="sensores_2"></canvas>
+                        </div>
+                        <div class="grafico">
+                            <canvas id="temp_umid_2"></canvas>
+                        </div>
+                    </div>
+                    <div class="linha2">
+                        <div class="grafico">
+                            <canvas id="canvas_grafico_barra_2"></canvas>
+                        </div>
+                        <div class="grafico">
+                            <canvas id="canvas_grafico_linha_2"></canvas>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
 </body>
@@ -47,4 +84,327 @@
     function redirecionar_home() {
         window.location.href = "Index.html"
     }
+    const sensores = document.getElementById('sensores');
+    const sensores_2 = document.getElementById('sensores_2');
+    const temp_umid = document.getElementById('temp_umid');
+    const temp_umid_2 = document.getElementById('temp_umid_2');
+    const barra_g = document.getElementById('canvas_grafico_barra');
+    const barra_g_2 = document.getElementById('canvas_grafico_barra_2');
+    const linha_g = document.getElementById('canvas_grafico_linha');
+    const linha_g_2 = document.getElementById('canvas_grafico_linha_2');
+
+    new Chart(sensores, {
+      
+      data: {
+        labels: ['DHT11_01', 'DHT11_02', 'DHT11_03', 'DHT11_04'],
+        datasets: [{
+            type: 'bar',
+        label: 'Umidade Média',
+          data: [90, 89, 93, 87],
+          borderWidth: 1,
+          yAxisID: 'Umidade'
+        },
+        {
+            type: 'bar',
+          label: 'Temperatura Média',
+          data: [22, 24, 27, 23],
+          borderWidth: 1,   
+          yAxisID: 'Temperatura'
+        }
+        ]
+      },
+      options: {
+        scales: {
+          Umidade: {
+            type: 'linear',
+            position: 'left',
+            gird:  {
+                drawOnChartArea: false
+            },
+            ticks: {
+                callback: function(value, index, values) {
+                    return `${value}.0%`;
+                }
+            }
+          },
+          Temperatura: {
+            beginAtZero: true,
+            type: 'linear',
+            position: 'right',
+            gird:  {
+                drawOnChartArea: false
+            },
+            ticks: {
+                callback: function(value, index, values) {
+                    return `${value} °C`;
+                }
+            }
+          }
+        }
+      }
+      
+    });
+
+
+    new Chart(temp_umid, {
+      data: {
+        labels: ['12:01', '12:02', '12:03', '12:04', '12:05', '12:06'],
+        datasets: [{
+        type: 'bar',
+        label: 'Umidade',
+        data: [80, 82, 80, 85, 80, 83],
+        borderWidth: 1,
+        yAxisID: 'Umidade'
+        
+        },
+        {
+        type: 'line',
+        label: 'Temperatura',
+        data: [-5, -4, -5, -2, 0, 4],
+        borderWidth: 1,
+        yAxisID: 'Temperatura'
+        }
+        ]
+      },
+      options: {
+        scales: {
+          Umidade: {
+            min: '60',
+            max: '100',
+            type: 'linear',
+            position: 'left',
+            gird:  {
+                drawOnChartArea: false
+            },
+            ticks: {
+                callback: function(value, index, values) {
+                    return `${value}.0%`;
+                }
+            }
+          },
+          Temperatura: {
+            min: '-10',
+            max: '10',
+            type: 'linear',
+            position: 'right',
+            gird:  {
+                drawOnChartArea: false
+            },
+            ticks: {
+                callback: function(value, index, values) {
+                    return `${value} °C`;
+                }
+            }
+          }
+        }
+    }
+});
+  
+    new Chart(linha_g, {
+      type: 'line',
+      data: {
+        labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+        datasets: [{
+          label: 'Temperatura',
+          data: [30, 29, 28, 25, 22, 23],
+          borderWidth: 1
+        },
+        {
+          label: 'Umidade',
+          data: [80, 82, 80, 85, 80, 83],
+          borderWidth: 1
+        }
+        ]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  
+    new Chart(barra_g, {
+      type: 'bar',
+      data: {
+        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+        datasets: [{
+        label: 'Umidade Média',
+          data: [90, 89, 93, 87, 88, 82],
+          borderWidth: 1
+        },
+        {
+          
+          label: 'Temperatura Média',
+          data: [22, 24, 27, 23, 20, 18],
+          borderWidth: 1
+        }
+        ]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+    new Chart(sensores_2, {
+      
+      data: {
+        labels: ['DHT11_01', 'DHT11_02', 'DHT11_03', 'DHT11_04'],
+        datasets: [{
+            type: 'bar',
+        label: 'Umidade Média',
+          data: [90, 89, 93, 87],
+          borderWidth: 1,
+          yAxisID: 'Umidade'
+        },
+        {
+            type: 'bar',
+          label: 'Temperatura Média',
+          data: [22, 24, 27, 23],
+          borderWidth: 1,   
+          yAxisID: 'Temperatura'
+        }
+        ]
+      },
+      options: {
+        scales: {
+          Umidade: {
+            type: 'linear',
+            position: 'left',
+            gird:  {
+                drawOnChartArea: false
+            },
+            ticks: {
+                callback: function(value, index, values) {
+                    return `${value}.0%`;
+                }
+            }
+          },
+          Temperatura: {
+            beginAtZero: true,
+            type: 'linear',
+            position: 'right',
+            gird:  {
+                drawOnChartArea: false
+            },
+            ticks: {
+                callback: function(value, index, values) {
+                    return `${value} °C`;
+                }
+            }
+          }
+        }
+      }
+      
+    });
+
+
+    new Chart(temp_umid_2, {
+      data: {
+        labels: ['12:01', '12:02', '12:03', '12:04', '12:05', '12:06'],
+        datasets: [{
+        type: 'bar',
+        label: 'Umidade',
+        data: [80, 82, 80, 85, 80, 83],
+        borderWidth: 1,
+        yAxisID: 'Umidade'
+        
+        },
+        {
+        type: 'line',
+        label: 'Temperatura',
+        data: [-5, -4, -5, -2, 0, 4],
+        borderWidth: 1,
+        yAxisID: 'Temperatura'
+        }
+        ]
+      },
+      options: {
+        scales: {
+          Umidade: {
+            min: '60',
+            max: '100',
+            type: 'linear',
+            position: 'left',
+            gird:  {
+                drawOnChartArea: false
+            },
+            ticks: {
+                callback: function(value, index, values) {
+                    return `${value}.0%`;
+                }
+            }
+          },
+          Temperatura: {
+            min: '-10',
+            max: '10',
+            type: 'linear',
+            position: 'right',
+            gird:  {
+                drawOnChartArea: false
+            },
+            ticks: {
+                callback: function(value, index, values) {
+                    return `${value} °C`;
+                }
+            }
+          }
+        }
+    }
+});
+  
+    new Chart(linha_g_2, {
+      type: 'line',
+      data: {
+        labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+        datasets: [{
+          label: 'Temperatura',
+          data: [30, 29, 28, 25, 22, 23],
+          borderWidth: 1
+        },
+        {
+          label: 'Umidade',
+          data: [80, 82, 80, 85, 80, 83],
+          borderWidth: 1
+        }
+        ]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  
+    new Chart(barra_g_2, {
+      type: 'bar',
+      data: {
+        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+        datasets: [{
+        label: 'Umidade Média',
+          data: [90, 89, 93, 87, 88, 82],
+          borderWidth: 1
+        },
+        {
+          
+          label: 'Temperatura Média',
+          data: [22, 24, 27, 23, 20, 18],
+          borderWidth: 1
+        }
+        ]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
 </script>

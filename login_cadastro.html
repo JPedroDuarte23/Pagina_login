@@ -36,9 +36,9 @@
         <div class="box_esquerda">  
             <div class="form entrar">
                 <h2>Login</h2>
-                <h4>E-mail:</h4> <input type="text" id="">
-                <h4>Senha:</h4> <input type="text">
-                <h4>Código de Segurança:</h4> <input type="text">
+                <h4>E-mail:</h4> <input type="text" id="input_email">
+                <h4>Senha:</h4> <input type="password" id="input_password">
+                <h4>Código de Segurança:</h4> <input type="text" id="input_cd_seguranca">
                 <button onclick="entrar()">Entrar</button>
                 <a onclick="animacao_cadastrar()">Ainda não possui uma conta?</a>
             </div>
@@ -46,7 +46,7 @@
         <div class="box_direita">
             <div class="form cadastro">
                 <h2>Cadastre-se</h2>
-                <h4>E-mail:</h4> <input type="text">
+                <h4>E-mail:</h4> <input type="text" >
                 <h4>Confirmar E-mail:</h4> <input type="text">
                 <h4>Senha:</h4> <input type="text">
                 <h4>Confirmar Senha:</h4> <input type="text">
@@ -121,9 +121,15 @@
         window.location.href = "Index.html"
     }
     function entrar() {
-        alert("Você entrou com sucesso");
-        window.location.href = "Dashboard_inicial.html"
+        var email = input_email.value
+        var password = input_password.value
+        var cd_seguranca = input_cd_seguranca.value
 
+        if( (email.indexOf("@") == -1 && email.endsWith(".com")) || password.length < 7 || cd_seguranca.length < 2) {
+            alert("insira um login válido")
+        } else {
+            window.location.href = "Dashboard_inicial.html"
+        }
     }
     function cadastrar() {
         alert("Você se cadastrou com sucesso")
