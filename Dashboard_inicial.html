@@ -27,9 +27,9 @@
             <header class="light_mode">
                 <h2>Gráficos</h2>
                 <div class="lateral_icones">
-                    <div class="icone light_mode" onclick="mudar_tema_claro()" id="div_sol"><img src="Imagens/sun.png" alt=""></div>
-                    <div class="icone light_mode" onclick="mudar_tema_escuro()" id="div_lua"><img src="Imagens/sun.png" alt=""></div>
-                    <div class="icone light_mode"><img src="Imagens/help.png" alt=""></div>
+                  <div class="icone light_mode" onclick="mudar_tema_claro()" id="div_sol"><i class="fa-solid fa-sun"></i></i></div>
+                  <div class="icone light_mode" onclick="mudar_tema_escuro()" id="div_lua"><i class="fa-solid fa-moon"></i></div>
+                  <div class="icone light_mode"><img src="Imagens/help.png" alt=""></div>
                     <div class="icone light_mode"><img src="Imagens/notification.png" alt=""></div>
                     <div class="user">
                         <div class="circulo"></div>
@@ -140,6 +140,7 @@
       }
       l2__divs = document.querySelectorAll('.light_mode');
      } else {
+
       for(num_divs = 0; num_divs <d2_divs.length; num_divs ++) {
       l2_divs[num_divs].classList.add('light_mode')
       l2_divs[num_divs].classList.remove('dark_mode')     
