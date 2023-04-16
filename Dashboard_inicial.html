@@ -27,7 +27,8 @@
             <header class="light_mode">
                 <h2>Gráficos</h2>
                 <div class="lateral_icones">
-                    <div class="icone light_mode" onclick="mudar_tema_escuro()" id="div_sol"><img src="Imagens/sun.png" alt=""></div>
+                    <div class="icone light_mode" onclick="mudar_tema_claro()" id="div_sol"><img src="Imagens/sun.png" alt=""></div>
+                    <div class="icone light_mode" onclick="mudar_tema_escuro()" id="div_lua"><img src="Imagens/sun.png" alt=""></div>
                     <div class="icone light_mode"><img src="Imagens/help.png" alt=""></div>
                     <div class="icone light_mode"><img src="Imagens/notification.png" alt=""></div>
                     <div class="user">
@@ -87,10 +88,35 @@
     function redirecionar_home() {
         window.location.href = "Index.html"
     }
+    const sol = document.getElementById('div_sol');
+    const lua = document.getElementById('div_lua');
+    
+
+    div_sol.addEventListener('click', () => {
+        localStorage.setItem('tema', 'light_mode');
+    });
+
+    div_lua.addEventListener('click', () => {
+        localStorage.setItem('tema', 'dark_mode');
+    }); 
+
+    const tema = localStorage.getItem('tema');
     const divs = document.querySelectorAll('.light_mode');
     var l2_divs = 0
     var d2_divs = 0
 
+
+    if (tema === 'light_mode') {
+        for(num_divs= 0; num_divs <divs.length; num_divs ++) {
+        divs[num_divs].classList.remove('dark_mode')
+        divs[num_divs].classList.add('light_mode')
+      }
+    } else if (tema === 'dark_mode') {
+        for(num_divs= 0; num_divs <divs.length; num_divs ++) {
+        divs[num_divs].classList.remove('light_mode')
+        divs[num_divs].classList.add('dark_mode')
+      }
+    }
     function mudar_tema_escuro(){
       if (d2_divs == 0) {
       for(num_divs= 0; num_divs <divs.length; num_divs ++) {
@@ -104,19 +130,21 @@
         d2_divs[num_divs].classList.add('dark_mode')
       }
     }
-      div_sol.setAttribute("onclick", "mudar_tema_claro();")
-      img_logo.setAttribute("src", "Imagens/logo3.png");
     }
 
     function mudar_tema_claro() {
-      for(num_divs = 0; num_divs <d2_divs.length; num_divs ++) {
-      d2_divs[num_divs].classList.add('light_mode')
-      d2_divs[num_divs].classList.remove('dark_mode')     
-
+      if (l2_divs == 0) {
+      for(num_divs= 0; num_divs <divs.length; num_divs ++) {
+        divs[num_divs].classList.remove('dark_mode')
+        divs[num_divs].classList.add('light_mode')
+      }
       l2__divs = document.querySelectorAll('.light_mode');
+     } else {
+      for(num_divs = 0; num_divs <d2_divs.length; num_divs ++) {
+      l2_divs[num_divs].classList.add('light_mode')
+      l2_divs[num_divs].classList.remove('dark_mode')     
     }
-    div_sol.setAttribute("onclick", "mudar_tema_escuro();")
-    img_logo.setAttribute("src", "Imagens/logo.png")
+  }
   }
   
     const sensores = document.getElementById('sensores');
