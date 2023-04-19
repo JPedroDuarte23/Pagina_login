@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -12,8 +12,9 @@
     
 </head>
 
-<body class="light_mode">
-    <section class="main">
+<body class="light_mode" >
+    <div id="div_registrar"></div>
+    <section class="main" id="corpo_principal">
         <div class="sidebar light_mode">
             <img src="imagens/logo.png" class="logomarca" id="img_logo" onclick="redirecionar_home()">
             <ul>
@@ -37,7 +38,37 @@
                     </div>
                 </div>
             </header>
-            <section class="lista_graficos">
+            <section class="botoes light_mode">
+              <button>Swift ZN</button>
+              <button>Swift ZS</button>
+              <button>Swift ZL</button>
+              <button>Swift ZO</button>
+              <button onclick="pop_up_cadastro()">Adicionar Sensor</button>
+              <i class="fa-solid fa-plus fa-xl"></i>
+            </section>
+            <section class="lista_graficos" id="section_controle">
+              <h2>Informações gerais</h2>
+
+              <div class="caixa_graficos light_mode">
+                  <div class="linha1">
+                      <div class="grafico light_mode">
+                          <canvas id="sensores"></canvas>
+                      </div>
+
+                      <div class="grafico light_mode">
+                          <canvas id="temp_umid"></canvas>
+                      </div>
+                  </div>
+                  <div class="linha2">
+                      <div class="grafico light_mode">
+                          <canvas id="canvas_grafico_barra"></canvas>
+                      </div>
+                      <div class="grafico light_mode">
+                          <canvas id="canvas_grafico_linha"></canvas>
+                      </div>
+                  </div>
+              </div>  
+              <hr class="light_mode">
                <h2>Loja Swift 1</h2>
 
                 <div class="caixa_graficos light_mode">
@@ -87,6 +118,24 @@
 <script>
     function redirecionar_home() {
         window.location.href = "Index.html"
+    }
+    function pop_up_cadastro() {
+      div_registrar.innerHTML = `
+      <div id="blur">
+        <div class="pop_up">
+          <h3>Registrar Sensor</h3>
+          <hr>
+          <h4>Campo 1:</h4> <input>
+          <h4>Campo 1:</h4> <input>
+          <h4>Campo 1:</h4> <input>
+          <button onclick=registrar_sensor()>Registrar</button>
+          </div>
+          </div>
+      `
+      blur.classList.add("blur")
+    }
+    function registrar_sensor() {
+      div_registrar.innerHTML = ""
     }
     const sol = document.getElementById('div_sol');
     const lua = document.getElementById('div_lua');
