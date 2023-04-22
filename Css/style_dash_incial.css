@@ -10,9 +10,12 @@ body {
     width: 100%;
     height: 100vh;
 }
-html,body {
+
+html,
+body {
     height: 100%;
 }
+
 #blur {
     width: 100%;
     height: 100%;
@@ -20,11 +23,12 @@ html,body {
     backdrop-filter: blur(10px) brightness(0.5);
     background-color: rgba(0, 0, 0, 0.5)
 }
+
 /* barra lateral */
 .logomarca:hover {
     cursor: pointer;
-  }
-  
+}
+
 .main {
     display: flex;
     flex-wrap: wrap;
@@ -32,6 +36,7 @@ html,body {
     width: 100%;
     justify-content: space-between;
 }
+
 .sidebar {
     width: 15%;
     height: 100%;
@@ -42,27 +47,30 @@ html,body {
     width: 70%;
     margin: 10% 10% 10% 15%;
 }
+
 .sidebar hr {
     margin: 0 5%;
 }
+
 .sidebar a {
     color: #7a7a7a;
     display: block;
     text-decoration: none;
     margin: 5% 0% 10% 0%;
-    padding: 8%  0 8% 10%;
+    padding: 8% 0 8% 10%;
     font-size: 1.2vw;
     display: flex;
     align-items: center;
     height: 50%;
 }
+
 .sidebar.dark_mode a {
-    color:white;
+    color: white;
 }
 
 .sidebar i {
-        width: 10%;
-        margin: 4% 6% 4% 10%;
+    width: 10%;
+    margin: 4% 6% 4% 10%;
 }
 
 .sidebar a:hover {
@@ -85,14 +93,16 @@ html,body {
 header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between  ;
+    justify-content: space-between;
     height: 40%;
     width: 100%;
     padding: 1% 0 3%;
 }
+
 header h2 {
     margin-top: 1%;
 }
+
 .lateral_icones {
     width: 30%;
     height: 100%;
@@ -104,10 +114,12 @@ header h2 {
     margin-top: 0.5%;
 
 }
+
 .lateral_icones h4 {
     font-weight: normal;
     font-size: 1.1vw;
 }
+
 .lateral_icones .icone {
     width: 25%;
     height: 85%;
@@ -117,15 +129,18 @@ header h2 {
     justify-content: center;
     align-items: center;
 }
+
 .icone:hover {
     cursor: pointer;
 }
+
 .icone i {
     cursor: pointer;
-    background: -webkit-linear-gradient(90deg, rgba(95,204,229,1) 0%, rgba(173,230,247,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(95, 204, 229, 1) 0%, rgba(173, 230, 247, 1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 .user {
     display: flex;
     width: 100%;
@@ -133,6 +148,7 @@ header h2 {
     height: 50%;
     margin: 1% 0 0 4%;
 }
+
 .lateral_icones .circulo {
     width: 35px;
     height: 35px;
@@ -153,24 +169,29 @@ header h2 {
     left: 20%;
     padding: 5%;
 }
+
 .pop_up h3 {
     text-align: center;
     margin-bottom: 0.5%;
     font-size: 1.5vw;
 }
+
 .pop_up hr {
     width: 25%;
     margin: 0 0 4% 37.5%;
 }
+
 .pop_up h4 {
     font-size: 1.3vw;
     margin: 2% 0 2% 0;
 }
+
 .pop_up input {
     width: 90%;
     margin: 0 5%;
     padding: 0.5%;
 }
+
 .pop_up button {
     margin-top: 5%;
     margin-left: 42.5%;
@@ -180,9 +201,10 @@ header h2 {
     font-weight: bold;
     font-size: 1.1vw;
     color: black;
-    background: linear-gradient(90deg, rgba(95,204,229,1) 0%, rgba(173,230,247,1) 100%);
+    background: linear-gradient(90deg, rgba(95, 204, 229, 1) 0%, rgba(173, 230, 247, 1) 100%);
     border: none;
 }
+
 /* Botoes */
 .botoes {
     display: flex;
@@ -190,6 +212,7 @@ header h2 {
     justify-content: space-evenly;
     padding: 2% 5% 2% 0%;
 }
+
 .botoes button {
     width: 15%;
     padding: 1% 0;
@@ -197,9 +220,11 @@ header h2 {
     font-weight: bold;
     font-size: 1.1vw;
     color: black;
-    background: linear-gradient(90deg, rgba(95,204,229,1) 0%, rgba(173,230,247,1) 100%);
+    background: linear-gradient(90deg, rgba(95, 204, 229, 1) 0%, rgba(173, 230, 247, 1) 100%);
     border: none;
+    cursor: pointer;
 }
+
 .botoes i {
     padding: 2%;
     cursor: pointer;
@@ -225,10 +250,12 @@ header h2 {
     border: 2px solid black;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(90deg, rgba(95,204,229,1) 0%, rgba(173,230,247,1) 100%);
+    background: linear-gradient(90deg, rgba(95, 204, 229, 1) 0%, rgba(173, 230, 247, 1) 100%);
     padding: 0.5%;
 }
-.linha1, .linha2 {
+
+.linha1,
+.linha2 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -245,15 +272,18 @@ header h2 {
     border-radius: 5px;
     background-color: #f3f3f3;
 }
+
 canvas {
     height: 100%;
     width: 100%;
     color: white;
 }
+
 hr {
     margin-bottom: 3%;
-    border: 1px solid black; 
+    border: 1px solid black;
 }
+
 .lista_graficos h2 {
     margin-bottom: 2%;
 }
@@ -262,9 +292,11 @@ hr {
     background-color: black;
     color: white;
 }
+
 .icone.dark_mode {
     background-color: #252525;
 }
+
 .grafico.dark_mode {
     background-color: #1f1919;
     border-color: #252525;
@@ -274,25 +306,45 @@ hr {
     background: linear-gradient(90deg, #D47C5E 0%, #e4cd4a 100%);
     border-color: #252525;
 }
+
 hr.dark_mode {
     border-color: white;
 }
+
 .sidebar.dark_mode a {
-    color:#7a7a7a;
+    color: #7a7a7a;
 }
+
 .sidebar.dark_mode a:hover {
     background-color: #d65b31;
     color: white;
 }
+
 .icone.dark_mode i {
     background: -webkit-linear-gradient(90deg, #D47C5E 0%, #e4cd4a 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 .botoes.dark_mode button {
     color: white;
     background: linear-gradient(90deg, #d16d4c 0%, #e4cd4a 100%);
 }
+
 .botoes.dark_mode i {
+    color: white;
+}
+
+.registrar.dark_mode .pop_up {
+    background-color: #252525;
+}
+
+.registrar.dark_mode hr {
+    border-color: white;
+}
+
+.registrar.dark_mode button {
+    background-color: #252525;
+    background: linear-gradient(90deg, #d16d4c 0%, #e4cd4a 100%);
     color: white;
 }

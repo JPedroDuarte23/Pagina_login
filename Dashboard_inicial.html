@@ -13,7 +13,11 @@
 </head>
 
 <body class="light_mode" >
-    <div id="div_registrar"></div>
+
+
+    <div id="div_registrar" class="registrar light_mode"></div>
+
+
     <section class="main" id="corpo_principal">
         <div class="sidebar light_mode">
             <img src="imagens/logo.png" class="logomarca" id="img_logo" onclick="redirecionar_home()">
@@ -52,19 +56,19 @@
               <div class="caixa_graficos light_mode">
                   <div class="linha1">
                       <div class="grafico light_mode">
-                          <canvas id="sensores"></canvas>
+                          <canvas id="graf1"></canvas>
                       </div>
 
                       <div class="grafico light_mode">
-                          <canvas id="temp_umid"></canvas>
+                          <canvas id="graf2"></canvas>
                       </div>
                   </div>
                   <div class="linha2">
                       <div class="grafico light_mode">
-                          <canvas id="canvas_grafico_barra"></canvas>
+                          <canvas id="graf3"></canvas>
                       </div>
                       <div class="grafico light_mode">
-                          <canvas id="canvas_grafico_linha"></canvas>
+                          <canvas id="graf4"></canvas>
                       </div>
                   </div>
               </div>  
@@ -125,12 +129,12 @@
         <div class="pop_up">
           <h3>Registrar Sensor</h3>
           <hr>
-          <h4>Campo 1:</h4> <input>
-          <h4>Campo 1:</h4> <input>
-          <h4>Campo 1:</h4> <input>
+          <h4>CNPJ:</h4> <input>
+          <h4>Situação do sensor:</h4> <input>
+          <h4>Localização:</h4> <input>
           <button onclick=registrar_sensor()>Registrar</button>
           </div>
-          </div>
+      </div>
       `
       blur.classList.add("blur")
     }
@@ -196,7 +200,12 @@
     }
   }
   }
-  
+
+
+    const graf1 = document.getElementById('graf1');
+    const graf2 = document.getElementById('graf2');
+    const graf3 = document.getElementById('graf3');
+    const graf4 = document.getElementById('graf4');
     const sensores = document.getElementById('sensores');
     const sensores_2 = document.getElementById('sensores_2');
     const temp_umid = document.getElementById('temp_umid');
@@ -205,6 +214,85 @@
     const barra_g_2 = document.getElementById('canvas_grafico_barra_2');
     const linha_g = document.getElementById('canvas_grafico_linha');
     const linha_g_2 = document.getElementById('canvas_grafico_linha_2');
+        /* Grafíco 1 */
+        new Chart(graf1, {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+            datasets: [{
+                label: 'Temperatura Média',
+                data: [3, 2.5, 3, 2, 3.1, 1.9, 2, 3, 2.2, 2.7, 2.1, 3],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    /* Grafíco 2 */
+    new Chart(graf2, {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+            datasets: [{
+                label: 'Umidade Média',
+                data: [90.2, 92.3, 89.9, 90.7, 91.5, 91.9, 88.4, 89.4, 92.8, 90.9, 89.2, 93.1],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    /* Grafíco 3 */
+    new Chart(graf3, {
+        type: 'bar',
+        data: {
+            labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+            datasets: [{
+                label: 'Alertas mensais',
+                data: [5, 7, 4, 6, 3, 3, 4, 6, 4, 2, 4, 5],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    /* Grafíco 4 */
+    new Chart(graf4, {
+        type: 'pie',
+        data: {
+            labels: ['Normal', 'Falha'],
+            datasets: [{
+                label: 'Falhas de Sensor',
+                data: [7, 3],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
 
     new Chart(sensores, {
       
