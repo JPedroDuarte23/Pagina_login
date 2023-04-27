@@ -36,9 +36,9 @@
         <div class="box_esquerda">  
             <div class="form entrar">
                 <h2>Login</h2>
-                <h4>E-mail:</h4> <input type="text" id="input_email">
-                <h4>Senha:</h4> <input type="password" id="input_password">
-                <h4>Código de Segurança:</h4> <input type="text" id="input_cd_seguranca">
+                <h4>E-mail:</h4> <input type="text" id="input_entrar_email">
+                <h4>Senha:</h4> <input type="password" id="input_entrar_password">
+                <h4>Código de Segurança:</h4> <input type="text" id="input_entrar_cd_seguranca">
                 <button onclick="entrar()">Entrar</button>
                 <a onclick="animacao_cadastrar()">Ainda não possui uma conta?</a>
             </div>
@@ -46,11 +46,11 @@
         <div class="box_direita">
             <div class="form cadastro">
                 <h2>Cadastre-se</h2>
-                <h4>E-mail:</h4> <input type="text" >
-                <h4>Confirmar E-mail:</h4> <input type="text">
-                <h4>Senha:</h4> <input type="text">
-                <h4>Confirmar Senha:</h4> <input type="text">
-                <h4>Código Segurança:</h4> <input type="text">
+                <h4>E-mail:</h4> <input type="text" id="input_cadastrar_email">
+                <h4>Confirmar E-mail:</h4> <input type="text" id="input_confirmar_email">
+                <h4>Senha:</h4> <input type="text" id="input_cadatrar_senha">
+                <h4>Confirmar Senha:</h4> <input type="text" id="input_confirmar_senha">
+                <h4>Código Segurança:</h4> <input type="text" id="input_cadastrar_cd_seguranca">
                 <button onclick="cadastrar()">Cadastrar</button>
                 <a onclick="animacao_entrar()">Já tem uma conta?</a>
             </div>
@@ -121,17 +121,37 @@
         window.location.href = "Index.html"
     }
     function entrar() {
-        var email = input_email.value
-        var password = input_password.value
-        var cd_seguranca = input_cd_seguranca.value
+        var entrar_email = input_entrar_email.value
+        var entrar_password = input_entrar_password.value
+        var entrar_cd_seguranca = input_entrar_cd_seguranca.value
 
-        if( (email.indexOf("@") == -1 && email.endsWith(".com")) || password.length < 7 || cd_seguranca.length < 2) {
+        if( (entrar_email.indexOf("@") == -1 && (entrar_email.endsWith(".com") || entrar_email.endsWith(".br"))) 
+        || entrar_password.length < 7 || entrar_cd_seguranca.length < 2) {
             alert("insira um login válido")
         } else {
             window.location.href = "Dashboard_inicial.html"
         }
     }
     function cadastrar() {
-        alert("Você se cadastrou com sucesso")
+        var cadastrar_email = input_cadastrar_email.value
+        var confirmar_email = input_confirmar_email.value
+        var cadastrar_senha = input_cadastrar_senha.value
+        var confirmar_senha = input_confirmar_senha.value
+        var cadastrar_cd_seguranca = input_cadastrar_cd_seguranca.value
+
+        var validou_email = cadastrar_email == confirmar_email
+        var validou_senha = cadastrar_senha == confirmar_senha
+
+        if ( (cadastrar_email.indexOf("@") == -1 &&
+         (cadastrar_email.endsWith(".com") || 
+         cadastrar_email.endsWith(".br"))) || 
+         cadastrar_senha.length < 7 ||
+         cadastrar_cd_seguranca.length < 2 && 
+         !validou_email && !validou_senha) {
+            alert("Você se cadastrou com sucesso")
+        } else {
+            alert("Verifique se os dados foram inseridos corretamente")
+        }
+        
     }
 </script>

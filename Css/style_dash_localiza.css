@@ -166,7 +166,7 @@ table {
 td {
     border-bottom: 1px solid black;
 }
-table h4 {
+.tabela h4 {
     margin: 0.5% 0 0.5% 1%;
     font-weight: 500;
 }

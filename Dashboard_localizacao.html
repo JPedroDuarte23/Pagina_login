@@ -27,7 +27,7 @@
                 <div class="lateral_icones">
                     <div class="icone light_mode" onclick="mudar_tema_claro()" id="div_sol"><i class="fa-solid fa-sun"></i></i></div>
                     <div class="icone light_mode" onclick="mudar_tema_escuro()" id="div_lua"><i class="fa-solid fa-moon"></i></div>
-                    <div class="icone light_mode"><img src="Imagens/help.png" alt=""></div>
+                    <div class="icone light_mode" onclick="redirecionar_fale_conosco()"><img src="Imagens/help.png" alt=""></div>
                     <div class="icone light_mode"><img src="Imagens/notification.png" alt=""></div>
                     <div class="user">
                         <div class="circulo"></div>
@@ -125,6 +125,12 @@
 
 </html>
 <script>
+    function redirecionar_home() {
+        window.location.href = "Index.html"
+    }
+    function redirecionar_fale_conosco() {
+      window.location.href = "Fale_conosco.html"
+    }
 
     const sol = document.getElementById('div_sol');
     const lua = document.getElementById('div_lua');
@@ -185,7 +191,7 @@
     }
   }
   }
-
+    const conteudo_inicial = div_tabela.innerHTML
     function procurar_1() {
         div_tabela.innerHTML = `
                     <h3 class="titulo">Endereços</h3>

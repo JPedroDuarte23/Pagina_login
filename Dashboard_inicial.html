@@ -34,7 +34,7 @@
                 <div class="lateral_icones">
                   <div class="icone light_mode" onclick="mudar_tema_claro()" id="div_sol"><i class="fa-solid fa-sun"></i></i></div>
                   <div class="icone light_mode" onclick="mudar_tema_escuro()" id="div_lua"><i class="fa-solid fa-moon"></i></div>
-                  <div class="icone light_mode"><img src="Imagens/help.png" alt=""></div>
+                  <div class="icone light_mode" onclick="redirecionar_fale_conosco()"><img src="Imagens/help.png" alt=""></div>
                     <div class="icone light_mode"><img src="Imagens/notification.png" alt=""></div>
                     <div class="user">
                         <div class="circulo"></div>
@@ -73,7 +73,7 @@
                   </div>
               </div>  
               <hr class="light_mode">
-               <h2>Loja Swift 1</h2>
+               <h2><a href="Dashboard_localizacao.html"  class="light_mode">Loja Swift - CEP 09520-180</a></h2>
 
                 <div class="caixa_graficos light_mode">
                     <div class="linha1">
@@ -95,7 +95,7 @@
                     </div>
                 </div>  
                 <hr class="light_mode">
-                <h2>Loja Swift 2</h2>
+                <h2><a href="Dashboard_localizacao.html" class="light_mode">Loja Swift - CEP 03131-010</a></h2>
                 <div class="caixa_graficos light_mode">
                     <div class="linha1">
                         <div class="grafico light_mode">
@@ -122,6 +122,9 @@
 <script>
     function redirecionar_home() {
         window.location.href = "Index.html"
+    }
+    function redirecionar_fale_conosco() {
+      window.location.href = "Fale_conosco.html"
     }
     function pop_up_cadastro() {
       div_registrar.innerHTML = `
