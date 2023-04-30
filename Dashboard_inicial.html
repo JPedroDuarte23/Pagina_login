@@ -15,7 +15,7 @@
 <body class="light_mode" >
 
 
-    <div id="div_registrar" class="registrar light_mode"></div>
+    <div id="div_pop_up" class="registrar light_mode"></div>
 
 
     <section class="main" id="corpo_principal">
@@ -34,8 +34,8 @@
                 <div class="lateral_icones">
                   <div class="icone light_mode" onclick="mudar_tema_claro()" id="div_sol"><i class="fa-solid fa-sun"></i></i></div>
                   <div class="icone light_mode" onclick="mudar_tema_escuro()" id="div_lua"><i class="fa-solid fa-moon"></i></div>
-                  <div class="icone light_mode" onclick="redirecionar_fale_conosco()"><img src="Imagens/help.png" alt=""></div>
-                    <div class="icone light_mode"><img src="Imagens/notification.png" alt=""></div>
+                  <div class="icone light_mode" onclick="redirecionar_fale_conosco()"><i class="fa-solid fa-circle-question"></i></div>
+                  <div class="icone light_mode" onclick="Gerar_alertas()"><i class="fa-solid fa-bell"></i></div>
                     <div class="user">
                         <div class="circulo"></div>
                         <h4>Swift</h4>
@@ -43,10 +43,9 @@
                 </div>
             </header>
             <section class="botoes light_mode">
-              <button>Swift ZN</button>
-              <button>Swift ZS</button>
-              <button>Swift ZL</button>
-              <button>Swift ZO</button>
+              <button>Informações Gerais</button>
+              <button onclick="descer_1()">CEP 09520-180</button>
+              <button onclick="descer_2()">CEP 03131-010</button>
               <button onclick="pop_up_cadastro()">Adicionar Sensor</button>
               <i class="fa-solid fa-plus fa-xl"></i>
             </section>
@@ -73,7 +72,7 @@
                   </div>
               </div>  
               <hr class="light_mode">
-               <h2><a href="Dashboard_localizacao.html"  class="light_mode">Loja Swift - CEP 09520-180</a></h2>
+               <h2  id="CEP_1"><a href="Dashboard_localizacao.html"  class="light_mode">Loja Swift - CEP 09520-180</a></h2>
 
                 <div class="caixa_graficos light_mode">
                     <div class="linha1">
@@ -95,7 +94,7 @@
                     </div>
                 </div>  
                 <hr class="light_mode">
-                <h2><a href="Dashboard_localizacao.html" class="light_mode">Loja Swift - CEP 03131-010</a></h2>
+                <h2 id="CEP_2"><a href="Dashboard_localizacao.html" class="light_mode">Loja Swift - CEP 03131-010</a></h2>
                 <div class="caixa_graficos light_mode">
                     <div class="linha1">
                         <div class="grafico light_mode">
@@ -127,7 +126,7 @@
       window.location.href = "Fale_conosco.html"
     }
     function pop_up_cadastro() {
-      div_registrar.innerHTML = `
+      div_pop_up.innerHTML = `
       <div id="blur">
         <div class="pop_up">
           <h3>Registrar Sensor</h3>
@@ -135,14 +134,60 @@
           <h4>CNPJ:</h4> <input>
           <h4>Situação do sensor:</h4> <input>
           <h4>Localização:</h4> <input>
-          <button onclick=registrar_sensor()>Registrar</button>
+          <button onclick=voltar_alertas()>Registrar</button>
           </div>
       </div>
       `
       blur.classList.add("blur")
     }
-    function registrar_sensor() {
-      div_registrar.innerHTML = ""
+    function descer_1() {
+      window.location.href = "#CEP_1"
+    }
+    function descer_2() {
+      window.location.href = "#CEP_2"
+    }
+    function Gerar_alertas() {
+        div_pop_up.innerHTML = `
+        <div id="blur">
+            <div class="alertas">
+                <h2>Alertas</h2>
+                <hr>
+                <table>
+                        <tr>
+                            <td>
+                                <h4><b style="color: red">Alerta Vermelho</b>&nbsp O sensor 1 da loja Swift - CEP 09520-180 - ultrapassou 4°C</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4><b style="color: #ffc000">Alerta Amarelo</b>&nbsp O sensor 5 da loja Swift - CEP 09520-180 - ultrapassou 92,5% UR</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4><b style="color: purple">Alerta Roxo</b>&nbsp O sensor 7 do frigorifico Bordon - CEP 05120-020 - atingiu uma temperatura abaixo de 0°C
+                                </h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <h4><b style="color: #ffc000">Alerta Amarelo</b>&nbsp O sensor 9 da loja Swift - CEP 02405-001 - ultrapassou 92,5% UR</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4><b style="color: blue">Alerta Azul</b>&nbsp O sensor 2 da loja Swift - CEP 05351-000 - atingiu uma UR de 84%</h4>
+                            </td>
+                        </tr>
+                        </table>
+                        <button onclick="voltar_alertas()">Voltar</button>
+            </div>
+        </div>
+        `
+    }
+    function voltar_alertas() {
+      div_pop_up.innerHTML = ""
     }
     const sol = document.getElementById('div_sol');
     const lua = document.getElementById('div_lua');
